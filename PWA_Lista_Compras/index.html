@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lista de Compras</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <div class="card">
+    <label>Saldo inicial</label>
+    <input type="number" id="saldoInicial" placeholder="Ex: 150">
+    <button onclick="definirSaldo()">Definir saldo</button>
+    <p><strong>Saldo restante:</strong> R$ <span id="saldoRestante">0.00</span></p>
+  </div>
+
+  <div class="card">
+    <h2>Adicionar item</h2>
+    <input id="descricao" placeholder="Produto">
+    <input id="quantidade" type="number" placeholder="Quantidade">
+    <input id="valorUnitario" type="number" step="0.01" placeholder="Valor unitário (R$)">
+    <button onclick="adicionarItem()">Adicionar</button>
+  </div>
+
+  <div class="card">
+    <p><strong>Total gasto:</strong> R$ <span id="totalGasto">0.00</span></p>
+  </div>
+
+  <div class="card">
+  <button onclick="limparTudo()">Limpar lista e reiniciar</button>
+  </div>
+
+  <div class="card">
+  <button onclick="gerarNota()">💾 Salvar / Gerar nota</button>
+  </div>
+
+  <ul id="listaCompras"></ul>
+
+  <script src="app.js"></script>
+
+  <div id="modal" class="modal">
+  <div class="modal-conteudo">
+    <h2>Nota de Compras</h2>
+
+    <pre id="conteudoNota"></pre>
+
+    <div class="modal-acoes">
+      <button onclick="reiniciarTudo()">🔁 Reiniciar</button>
+      <button onclick="fecharModal()">❌ Fechar</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
