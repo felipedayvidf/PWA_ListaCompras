@@ -115,6 +115,14 @@ function gerarNota() {
   abrirModal();
 }
 
+function copiarNota() {
+  const texto = document.getElementById("conteudoNota").innerText;
+
+  navigator.clipboard.writeText(texto)
+  .then(() => alert("Nota copiada!"))
+  .catch(() => alert("Erro ao copiar"));
+}
+
 function abrirModal() {
   document.getElementById("modal").style.display = "flex";
 }
