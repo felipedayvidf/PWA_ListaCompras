@@ -122,8 +122,11 @@ background: #259702;
   color: #000000;
   width: 90%;
   max-width: 400px;
+  max-height: 80vh;
   padding: 15px;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-conteudo h2 {
@@ -138,6 +141,8 @@ background: #259702;
   font-size: 14px;
   white-space: pre-wrap;
   user-select: text;
+  overflow-y: auto;
+  max-height: 60vh;
 }
 
 .modal-acoes {
